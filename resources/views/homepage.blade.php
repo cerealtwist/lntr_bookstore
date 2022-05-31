@@ -5,18 +5,18 @@
 <section style="margin-top: 5%;margin-bottom: 5%">
     <div class="max-w-screen-xl px-4 py-8 mx-auto">
       <div>
-        <span class="inline-block w-12 h-1 bg-blue-700"></span>
+        <span class="inline-block w-12 h-1 bg-blue-500 rounded-lg"></span>
   
-        <h2 class="mt-1 text-2xl font-extrabold tracking-wide lg:text-3xl">
+        <h2 class="mt-1 text-2xl font-bold tracking-wide lg:text-3xl text-gray-900">
           Featured Books
         </h2>
       </div>
 
-      <div class="grid grid-cols-2 mt-8 lg:grid-cols-4 gap-x-4 gap-y-8" style="margin-top: 5%;">
+      <div class="grid grid-cols-2 mt-8 lg:grid-cols-4 gap-x-12 gap-y-8" style="margin-top: 5%;">
         @foreach ($products as $product)
         <a class="block">
           <div class="flex justify-center">
-            <strong class="relative h-6 px-4 text-sm leading-6 text-white uppercase bg-gray-800"> Featured </strong>
+            <strong class="relative h-6 px-4 text-xs leading-6 text-white uppercase bg-blue-500 rounded-lg"> Featured </strong>
           </div>
   
           <img
@@ -25,20 +25,20 @@
             class="object-cover w-full -mt-3 h-96"
           />
   
-          <h5 class="mt-4 text-lg text-black/90">
+          <h5 class="mt-4 text-xl text-gray-900 font-semibold">
             {{$product->name}}
           </h5>
   
-          <div class="flex items-center justify-between mt-4 font-bold">
+          <div class="flex items-center justify-between mt-4 font-medium">
             <p class="text-lg">
               {{$product->price}}
             </p>
   
-            <p class="text-md tracking-wide uppercase">
+            <p class="text-sm tracking-wide uppercase">
               {{$product->type}}
             </p>
           </div>
-          <button type="button" onclick="window.location='{{route('AddToCartProduct',['id'=>$product->id])}}'" class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
+          <button type="button" onclick="window.location='{{route('AddToCartProduct',['id'=>$product->id])}}'" class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-500">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-1" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
             </svg>
@@ -50,7 +50,7 @@
     </div>
 </section>
 
-{{-- <div class="mx-auto container py-12 px-4 md:px-6 2xl:px-0 flex justify-center items-center">
+<div class="mx-auto container py-12 px-4 md:px-6 2xl:px-0 flex justify-center items-center">
   <div class="flex flex-col lg:flex-row justify-center items-center lg:space-x-8 space-y-6 lg:space-y-0">
       <div class="relative">
           <img class="hidden lg:block" src="https://i.ibb.co/XXKZ7Pt/Group-1785.png" alt="table-chair" />
@@ -90,10 +90,10 @@
           </div>
       </div>
   </div>
-</div> --}}
+</div>
 
 
-<div class="container px-5 py-24 mx-auto" style="margin-bottom: 10%">
+<div class="container px-5 py-24 mx-auto" style="margin-bottom: 5%">
     <div class="flex flex-col text-center w-full mb-20">
       <h2 class="text-xs text-blue-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Master Cleanse Reliac Heirloom</h1>

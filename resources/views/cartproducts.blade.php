@@ -31,7 +31,7 @@
               </div>
               <div class="flex flex-col justify-between ml-4 flex-grow">
                 <span class="font-medium text-md">{{$item['data']['name']}}</span>
-                <span class="font-bold text-blue-600 text-sm">{{$item['data']['type']}}</span>
+                <span class="font-bold text-blue-500 text-sm">{{$item['data']['type']}}</span>
                 <span class="text-gray-500 text-xs">{{$item['data']['description']}}</span>
                 {{-- <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a> --}}
               </div>
@@ -56,10 +56,9 @@
           </div>
           @endforeach
   
-          <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
-        
-            <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
-            Continue Shopping
+          <a href="#" class="flex font-semibold text-blue-500 hover:text-blue-600 text-sm mt-10">
+            <svg class="fill-current mr-2 text-blue-500 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
+            Kembali
           </a>
         </div>
   
@@ -67,16 +66,16 @@
           <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
           @foreach ($cartItems->items as $item)
           <div class="flex justify-between mt-10 mb-5">
-            <span class="font-semibold text-sm uppercase">{{$item['data']['name']}} - {{$item['quantity']}}</span>
-            <span class="font-semibold text-sm text-blue-600">{{$item['totalSinglePrice']}}</span>
+            <span class="font-semibold text-sm uppercase">{{$item['data']['name']}} | {{$item['quantity']}}</span>
+            <span class="font-semibold text-sm text-blue-500">{{$item['totalSinglePrice']}}</span>
           </div>
           @endforeach
           <div class="border-t mt-8">
             <div class="flex font-semibold justify-between py-6 text-sm uppercase">
-              <span>Sub Total cost</span>
+              <span>Harga Subtotal</span>
               <span>{{$cartItems->totalPrice}}</span>
             </div>
-            <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+            <button class="bg-blue-500 font-semibold hover:bg-blue-600 py-3 text-sm text-white uppercase w-full rounded-lg">Checkout</button>
           </div>
         </div>
   

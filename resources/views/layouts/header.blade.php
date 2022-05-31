@@ -7,13 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lentera - The Book Store</title>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">	
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
 
     <style>
-        .work-sans {
-            font-family: 'Work Sans', sans-serif;
-        }
                 
         #menu-toggle:checked + #menu {
             display: block;
@@ -53,14 +49,13 @@
             left: 0;
             right: 0;
             text-align: center;
-            z-index: 10;
+            z-index: 9;
         }
         
         #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
         #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
         #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-            color: #000;
-            /*Set to match the Tailwind colour you want the active one to be */
+            color: #3B82F6;
         }
     </style>
 
@@ -121,7 +116,7 @@
             <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
 
-            <!-- Add additional indicators for each slide-->
+            <!-- Indikator Slider -->
             <ol class="carousel-indicators">
                 <li class="inline-block mr-3">
                     <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>

@@ -2,9 +2,9 @@
     <div class="container px-4 py-4 mx-auto">
       <div class="flex flex-wrap -mx-4 pb-12 mb-12 border-b border-gray-400">
         <div class="w-full lg:w-2/5 px-4 mb-16 lg:mb-0">
-          <span class="text-lg text-blue-400 font-bold">Lentera</span>
+          <span class="text-lg text-blue-400 font-bold">Laterna</span>
           <h2 class="max-w-sm mt-8 mb-8 text-4xl text-white font-bold font-heading">The Indonesian Bookstore</h2>
-          <p class="mb-12 text-gray-300">Lentera adalah toko buku online official & terlengkap di Indonesia yang menyediakan beragam jenis buku berkualitas.</p>
+          <p class="mb-12 text-gray-300">Laterna adalah toko buku online official & terlengkap di Indonesia yang menyediakan beragam jenis buku berkualitas.</p>
           <div><a class="inline-block mb-2 sm:mb-0 sm:mr-4 py-2 px-12 text-white font-bold bg-blue-500 hover:bg-blue-600 rounded-full transition duration-200" href="#">Kontak Kami</a></div>
         </div>
         <div class="w-full lg:w-3/5 px-4">

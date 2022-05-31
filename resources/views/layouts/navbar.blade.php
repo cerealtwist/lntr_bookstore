@@ -5,7 +5,7 @@
             <div class="flex flex-col md:flex-row md:justify-between md:items-center">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center">
-                        <a class="text-2xl font-extrabold text-blue-500 transition-colors duration-200 lg:text-3xl hover:text-gray-700" href="{{route('homePage')}}">Lentera</a>
+                        <a class="text-2xl font-extrabold text-blue-500 transition-colors duration-200 lg:text-3xl hover:text-gray-700" href="{{route('homePage')}}">Laterna</a>
 
                         <!-- Search input di sebelah logo -->
                         <div class="hidden mx-10 md:block">

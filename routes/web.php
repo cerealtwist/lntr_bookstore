@@ -19,15 +19,32 @@ Route::get('/', function () {
 
 Route::get('/home', ['uses'=>'App\Http\Controllers\ProductsController@index', "as"=> "homePage"]);
 
-Route::get('/product/addToCart/{id}',['uses'=>'App\Http\Controllers\ProductsController@addProductToCart','as'=>'AddToCartProduct']);
+Route::middleware(['auth'])->group(function(){
+    
+    Route::get('/product/addToCart/{id}',['uses'=>'App\Http\Controllers\ProductsController@addProductToCart',
+    'as'=>'AddToCartProduct']);
 
-Route::get('/cart', ['uses'=>'App\Http\Controllers\ProductsController@showCart', "as"=> "cartproducts"]);
+    Route::get('/cart', ['uses'=>'App\Http\Controllers\ProductsController@showCart',
+    "as"=> "cartproducts"]);
 
-Route::get('/product/deleteCartItem/{id}',['uses'=>'App\Http\Controllers\ProductsController@deleteCartItem','as'=>'DeleteCartItem']);
+    Route::get('/product/deleteCartItem/{id}',['uses'=>'App\Http\Controllers\ProductsController@deleteCartItem',
+    'as'=>'DeleteCartItem']);
 
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//super admin
+Route::get('admin/overview', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@index',
+    "as"=>'adminOverview']);
+
+//edit form
+Route::get('admin/editProduct{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@editProduct',
+    "as"=>'adminEditProduct']);
+
+Route::post('admin/editProduct{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@updateProductImage',
+    "as"=>'adminEditProduct']);
+
+// Route::get('/overview', function () {
+//     return view('admin.products_overview');
+// })->middleware(['auth'])->name('overview');
 
 require __DIR__.'/auth.php';

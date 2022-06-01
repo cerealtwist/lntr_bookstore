@@ -40,8 +40,23 @@ Route::get('admin/overview', ['uses'=>'App\Http\Controllers\Admin\AdminProductsC
 Route::get('admin/editProduct{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@editProduct',
     "as"=>'adminEditProduct']);
 
-Route::post('admin/editProduct{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@updateProductImage',
-    "as"=>'adminEditProduct']);
+Route::post('admin/updateProductImage/{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@updateProductImage',
+    "as"=>'adminUpdateProductImage']);
+
+Route::post('admin/updateProduct/{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@updateProduct',
+    "as"=>'adminUpdateProduct']);
+
+//create product 
+Route::get('admin/createProduct', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@createProduct',
+    "as"=>'adminCreateProduct']);
+
+//send new product
+Route::post('admin/sendCreateProduct/', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@sendCreateProduct',
+    "as"=>'adminSendCreateProduct']);
+
+//delete product
+Route::get('admin/deleteProduct/{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@deleteProduct',
+    "as"=>'adminDeleteProduct']);
 
 // Route::get('/overview', function () {
 //     return view('admin.products_overview');

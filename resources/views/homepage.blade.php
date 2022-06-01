@@ -14,11 +14,7 @@
 
       <div class="grid grid-cols-2 mt-8 lg:grid-cols-4 gap-x-12 gap-y-8" style="margin-top: 5%;">
         @foreach ($products as $product)
-        <a class="block">
-          <div class="flex justify-center">
-            <strong class="relative h-6 px-4 text-xs leading-6 text-white uppercase bg-blue-500 rounded-lg"> Featured </strong>
-          </div>
-  
+        <a class="block">  
           <img
             alt="Book Product"
             src="{{Storage::disk('local')->url('product_images/'.$product->image)}}"
@@ -95,8 +91,8 @@
 
 <div class="container px-5 py-24 mx-auto" style="margin-bottom: 5%">
     <div class="flex flex-col text-center w-full mb-20">
-      <h2 class="text-xs text-blue-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>
-      <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Master Cleanse Reliac Heirloom</h1>
+      <h2 class="text-xs text-blue-500 tracking-widest font-medium title-font mb-1">THE BOOK COLLECTION</h2>
+      <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Jelajahi Ratusan Koleksi Buku Di Toko Kami</h1>
     </div>
     <div class="flex flex-wrap -m-4">
       <div class="p-4 md:w-1/3">

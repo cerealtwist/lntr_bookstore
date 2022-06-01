@@ -98,7 +98,7 @@
                 <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Ensiklopedia</a>
                 <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Sains</a>
                 <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Antologi</a>
-                <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Fotografi</a>
+                <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Biografi</a>
                 <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Bahasa</a>
                 <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Majalah</a>
                 <a class="mx-4 text-sm leading-5 text-gray-700 transition-colors duration-200 transform hover:text-blue-600 hover:no-underline md:my-0" href="#">Seni</a>

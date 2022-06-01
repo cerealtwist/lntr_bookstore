@@ -1,6 +1,8 @@
 @extends('layouts.index')
 
 @section('center')
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <section style="margin-top: 5%;margin-bottom: 5%">
     <div class="max-w-screen-xl px-4 py-8 mx-auto">
@@ -12,10 +14,13 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-2 mt-8 lg:grid-cols-4 gap-x-12 gap-y-8" style="margin-top: 5%;">
+      <div class="grid grid-cols-2 mt-8 lg:grid-cols-4 gap-x-12 gap-y-8 swiper" style="margin-top: 5%;">
+        <ul class="swiper-wrapper">
         @foreach ($products as $product)
+        <li class="swiper-slide">
         <a class="block">  
           <img
+            onclick="window.location='{{route('productPage',['id'=>$product->id])}}'"
             alt="Book Product"
             src="{{Storage::disk('local')->url('product_images/'.$product->image)}}"
             class="object-cover w-full -mt-3 h-96"
@@ -34,14 +39,17 @@
               {{$product->type}}
             </p>
           </div>
-          <button type="button" onclick="window.location='{{route('AddToCartProduct',['id'=>$product->id])}}'" class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-500">
+          {{-- <button type="button" onclick="window.location='{{route('AddToCartProduct',['id'=>$product->id])}}'" class="flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-500">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mx-1" viewBox="0 0 20 20" fill="currentColor">
                 <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
             </svg>
             <span class="mx-1"">ADD TO CART</span>
-          </button>
+          </button> --}}
+          <button type="button" onclick="window.location='{{route('AddToCartProduct',['id'=>$product->id])}}'" class="flex items-center justify-center w-full px-2 py-2 font-medium mt-4 transition ease-in duration-200 uppercase hover:bg-gray-800 hover:text-white border-2 border-gray-900 focus:outline-none">Add to cart</button>
         </a>
+      </li>
         @endforeach
+        </ul>
       </div>
     </div>
 </section>
@@ -99,14 +107,14 @@
         <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
           <div class="flex items-center mb-3">
             <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
             </div>
-            <h2 class="text-gray-900 text-lg title-font font-medium">Shooting Stars</h2>
+            <h2 class="text-gray-900 text-lg title-font font-medium">Koleksi Buku Lengkap</h2>
           </div>
           <div class="flex-grow">
-            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+            <p class="leading-relaxed text-base">Jelajahi koleksi buku kami yang lengkap dengan lebih dari 400+ pilihan.</p>
             <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -124,10 +132,10 @@
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
             </div>
-            <h2 class="text-gray-900 text-lg title-font font-medium">The Catalyzer</h2>
+            <h2 class="text-gray-900 text-lg title-font font-medium">Best Author</h2>
           </div>
           <div class="flex-grow">
-            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+            <p class="leading-relaxed text-base">Cari pilihan buku dari author terbaik dan favoritmu hanya di katalog lengkap laterna bookstore.</p>
             <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -140,16 +148,14 @@
         <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
           <div class="flex items-center mb-3">
             <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-blue-500 text-white flex-shrink-0">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
-                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
               </svg>
             </div>
-            <h2 class="text-gray-900 text-lg title-font font-medium">Neptune</h2>
+            <h2 class="text-gray-900 text-lg title-font font-medium">Click & Go</h2>
           </div>
           <div class="flex-grow">
-            <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+            <p class="leading-relaxed text-base">Hanya dengan sekali klik anda dapat membeli buku kesukaanmu secara praktis.</p>
             <a class="mt-3 text-blue-500 inline-flex items-center">Learn More
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -160,6 +166,33 @@
       </div>
     </div>
   </div>
+
+  <style>
+    .swiper-pagination {
+      bottom: 0;
+      position: relative;
+    }
+  </style>
+  
+  <script>
+    new Swiper('.swiper', {
+      loop: true,
+      spaceBetween: 32,
+      slidesPerView: 1,
+      pagination: {
+        clickable: true,
+        el: '.swiper-pagination',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+    })
+  </script>
   
 
 @endsection

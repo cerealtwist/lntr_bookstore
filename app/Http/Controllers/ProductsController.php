@@ -18,10 +18,17 @@ class ProductsController extends Controller
             1=> ["name"=>"Mohammad Hatta","category"=>"Biography","price"=>70000],
             2=> ["name"=>"The Bible","category"=>"Religi","price"=>80000]];*/
 
-        $products = Product::all();
+        $products = Product::paginate(4);
 
         return view("homepage", compact("products"));
     }
+
+    public function showProductPage($id){
+
+       $data = Product::find($id);
+       return view('product_page',['product'=>$data]);
+    }
+
 
     public function addProductToCart(Request $request, $id){
 

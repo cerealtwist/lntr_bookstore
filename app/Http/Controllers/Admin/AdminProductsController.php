@@ -14,7 +14,7 @@ class AdminProductsController extends Controller
 {
     //display semua produk
     public function index(){
-        $products = Product::all();
+        $products = Product::paginate(2);
         return view("admin.overview", ['products' =>$products]);
     }
 

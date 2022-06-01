@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/home', ['uses'=>'App\Http\Controllers\ProductsController@index', "as"=> "homePage"]);
+Route::get('/', ['uses'=>'App\Http\Controllers\ProductsController@index', "as"=> "homePage"]);
 
 Route::middleware(['auth'])->group(function(){
     
@@ -30,11 +26,14 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/product/deleteCartItem/{id}',['uses'=>'App\Http\Controllers\ProductsController@deleteCartItem',
     'as'=>'DeleteCartItem']);
 
+    Route::get('/product/{id}', ['uses'=>'App\Http\Controllers\ProductsController@showProductPage',
+    "as"=> "productPage"]);
+
 });
 
 //super admin
 Route::get('admin/overview', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@index',
-    "as"=>'adminOverview']);
+    "as"=>'adminOverview'])->middleware('restrictToAdmin');
 
 //edit form
 Route::get('admin/editProduct{id}', ['uses'=>'App\Http\Controllers\Admin\AdminProductsController@editProduct',
